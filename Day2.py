@@ -90,15 +90,35 @@ Break and continue statements
 #     print("Not Prime Number")      
 
 # optimised prime
-n=int(input())
-nw=int(n**0.5)
-is_prime=True
-for i in range(2,nw+1): #[2,n-1]:
-    if n%i==0: #n is multiple of i 
-        is_prime=False
-        break
-if is_prime:
-    print("Prime Number")
-else:
-    print("Not Prime Number")      
+# n=int(input())
+# nw=int(n**0.5)
+# is_prime=True
+# for i in range(2,nw+1): #[2,n-1]:
+#     if n%i==0: #n is multiple of i 
+#         is_prime=False
+#         break
+# if is_prime:
+#     print("Prime Number")
+# else:
+#     print("Not Prime Number")      
 
+# nCr 
+"""
+n!/r!(n-r)!
+"""
+n=int(input())
+r=int(input())
+nr=n-r
+
+fact_n,fact_r,fact_nr=1,1,1
+for i in range(1,n+1):
+    fact_n*=i
+
+for i in range(1,r+1):
+    fact_r*=i
+
+for i in range(1,nr+1):
+    fact_nr*=i
+
+ans=fact_n/(fact_r*fact_nr)
+print(ans)
